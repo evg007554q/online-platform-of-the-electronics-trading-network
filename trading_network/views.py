@@ -1,6 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.filters import OrderingFilter
 from trading_network.models import Network
+from trading_network.permissions import IsActiveEmployee
 from trading_network.serializers import NetworkSerializers
 
 
@@ -10,7 +11,7 @@ class NetworkViewSet(viewsets.ModelViewSet):
 
     filter_backends = [OrderingFilter]
     filterset_fields = ('country', )
-
+    permission_classes = [IsActiveEmployee]
 
 
 

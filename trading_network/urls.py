@@ -7,9 +7,9 @@ from trading_network.views import NetworkViewSet
 app_name = TradingNetworkConfig.name
 
 router = DefaultRouter()
-router.register(r'network', NetworkViewSet, basename='network')
+router.register(r'trading_network', NetworkViewSet, basename='trading_network')
 
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
 ]
